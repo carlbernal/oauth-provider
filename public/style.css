@@ -1,0 +1,26 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.login-screen {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.login-screen form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-screen form input {
+  margin-top: 5px;
+}

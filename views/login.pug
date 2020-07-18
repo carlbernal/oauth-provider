@@ -1,0 +1,11 @@
+html
+  head
+    link(rel="stylesheet", href="/style.css")
+  body
+    main
+      .login-screen
+        h1 Login using your Testing Account
+        form(action="/oauth/login", method="POST")
+          input(type="text", id="user", name="user", placeholder="Username")
+          input(type="password", id="pass", name="pass", placeholder="Password")
+          input(type="submit", value="Log In")
