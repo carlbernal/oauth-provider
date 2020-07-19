@@ -13,7 +13,7 @@ app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "./public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(morgan("common"));
+app.use(morgan("combined"));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
