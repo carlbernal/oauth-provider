@@ -6,6 +6,7 @@
 
 ## TODO
 
+- Add install script
 - Implement implicit code
 - Implement refresh token
 - Implement clearer error codes
