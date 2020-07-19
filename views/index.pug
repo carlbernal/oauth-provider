@@ -1,9 +1,58 @@
 html
   head
     link(rel="stylesheet", href="/style.css")
+    script(src="/script.js")
   body
-    h1 OAuth provider by carlbernal
-    h3 Endpoints
-    ul
-      li / &#127825; Instructions
-      li /oauth &#127825; Authorization link
+    .admin-container
+      .admin-readme
+        h1 OAuth provider by carlbernal
+        a(href="https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2", target="_blank") oauth spec
+        br
+        a(href="https://docs.apigee.com/api-platform/reference/policies/oauth-http-status-code-reference", target="_blank") oauth error code ref
+        h3 TODO
+        ul
+          li Implement implicit code
+          li Implement refresh token
+          li Implement clearer error codes
+          li Implement dummy resource database
+          li Add material design
+        h3 Endpoints
+        ul
+          li GET / &#127825; Dashboard
+          li GET /oauth/authorize &#127825; Authorization endpoint
+          li POST /oauth/token &#127825; Token endpoint
+      .admin-add-account
+        h1 Add testing account
+        form(action="/account", method="POST")
+          input(type="email", id="username", name="username", placeholder="Username" required)
+          input(type="text", id="password", name="password", placeholder="Password" required)
+          input(type="submit", value="Add")
+      .admin-view-account
+        h1 Testing Accounts
+        table
+          tr
+            th Username
+          each user in users
+            tr
+              td= user.username
+              td
+                button(type="button", onclick='delAccount("' + user.username + '")') Delete
+      .admin-add-application
+        h1 Register an application
+        form(action="/client", method="POST")
+          input(type="text", id="name", name="name", placeholder="Application name" required)
+          input(type="submit", value="Register")
+      .admin-view-application
+        h1 Registered applications
+        table
+          tr
+            th Application name
+            th Client id
+            th Client secret
+          each client in clients
+            tr
+              td= client.name
+              td= client.client_id
+              td= client.client_secret
+              td
+                button(type="button", onclick='delClient("' + client.name + '")') Delete

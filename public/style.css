@@ -2,7 +2,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
+.admin-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,4 +28,43 @@ main {
 
 .login-screen form input {
   margin-top: 5px;
+}
+
+.admin-readme {
+  width: 500px;
+}
+
+.admin-add-account {
+  width: 400px;
+  padding-left: 20px;
+}
+
+.admin-add-account form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-view-account {
+  width: 400px;
+  padding-left: 20px;
+}
+
+.admin-view-account table td,
+th {
+  padding: 5px;
+}
+
+.admin-add-application {
+  width: 400px;
+  padding-left: 20px;
+}
+
+.admin-view-application {
+  width: 400px;
+  padding-left: 20px;
+}
+
+.admin-view-application table td,
+th {
+  padding: 5px;
 }

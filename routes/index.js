@@ -1,9 +1,7 @@
 const oauth = require('./oauth')
-
+const admin = require('./admin')
 
 module.exports = (app) => {
-  app.get('/', (req, res) => {
-    res.render('index')
-  });
+  app.use('/', admin)
   app.use('/oauth', oauth)
 }
