@@ -5,7 +5,7 @@ html
     main
       .login-screen
         h1 Login using your Testing Account
-        form(action="/oauth/login", method="POST")
-          input(type="text", id="user", name="user", placeholder="Username")
-          input(type="password", id="pass", name="pass", placeholder="Password")
+        form(action="/oauth", method="POST")
+          input(type="text", id="username", name="username", placeholder="Username")
+          input(type="password", id="password", name="password", placeholder="Password")
           input(type="submit", value="Log In")

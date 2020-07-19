@@ -24,3 +24,6 @@ bazel-out/
 .env
 .sass-cache/
 connect.lock
+
+# keys
+firebase-db-key.json
