@@ -11,6 +11,7 @@ router.get("/authorize", (req, res) => {
   req.session.redirect_uri = req.query.redirect_uri;
   req.session.response_type = req.query.response_type;
   req.session.scope = req.query.scope;
+  req.session.state = req.query.state;
   // TODO: check if response_type is auth code or implicit code
   // TODO: create flow for implicit code
   res.render("login");
@@ -55,7 +56,7 @@ router.post("/token", async (req, res) => {
 router.get("/error", (req, res) => {
   // Login failed
   // TODO: add login failed error message
-  res.status(400).redirect(req.session.redirect_uri);
+  res.status(400).redirect(req.session.redirect_uri + "?state=" + req.session.state);
 });
 
 // TODO: any client should not have the ability to call this explicitly
@@ -71,7 +72,7 @@ router.get("/success", async (req, res) => {
     // TODO: add timer to auth code
     await clientRef.doc(client.docs[0].id).update({ code: code });
 
-    res.status(200).redirect(req.session.redirect_uri + "?code=" + code);
+    res.status(200).redirect(req.session.redirect_uri + "?code=" + code + "&state=" + req.session.state);
   } catch (e) {
     console.log(e);
     // Param missing
