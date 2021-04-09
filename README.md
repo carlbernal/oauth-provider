@@ -1,8 +1,12 @@
-# OAuth provider by carlbernal
+# OAuth provider
 
-[oauth spec](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+Used test client oauth integrations.
 
-[oauth error code ref](https://docs.apigee.com/api-platform/reference/policies/oauth-http-status-code-reference)
+## Specs
+
+[OAuth spec](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+
+[OAuth error code ref](https://docs.apigee.com/api-platform/reference/policies/oauth-http-status-code-reference)
 
 ## TODO
 
